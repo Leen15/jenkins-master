@@ -32,4 +32,4 @@ RUN apt-get update -qq && apt-get install -qqy wget curl git iptables ca-certifi
 # for jenkins
 RUN echo deb http://pkg.jenkins-ci.org/debian binary/ >> /etc/apt/sources.list \
     && wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
-RUN apt-get update -qq && apt-get install -qqy jenkins
+RUN apt-get update -qq && apt-get install -qqy jenkins=$JENKINS_VERSION
