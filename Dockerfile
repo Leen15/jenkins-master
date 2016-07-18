@@ -11,6 +11,8 @@ ENV JENKINS_HOME /var/jenkins
 # set our user home to the same location
 ENV HOME /var/jenkins
 
+ENV JENKINS_VERSION=2.9
+
 # set our wrapper
 ENTRYPOINT ["/usr/local/bin/docker-wrapper"]
 # default command to launch jenkins
@@ -38,4 +40,4 @@ RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz > /tmp/
 # for jenkins
 RUN echo deb http://pkg.jenkins-ci.org/debian binary/ >> /etc/apt/sources.list \
     && wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
-RUN apt-get update -qq && apt-get install -qqy jenkins$JENKINS_VERSION
+RUN apt-get update -qq && apt-get install -qqy jenkins=$JENKINS_VERSION
