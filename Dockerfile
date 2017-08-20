@@ -1,5 +1,5 @@
-FROM ubuntu:trusty
-MAINTAINER Bilal Sheikh <bilal@techtraits.com>
+FROM ubuntu:16.04
+MAINTAINER Luca Mattivi <luca@smartdomotik.com>
 
 # expose the port
 EXPOSE 8080
